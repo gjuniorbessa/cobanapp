@@ -19,8 +19,8 @@
 
         vm.relatorio = null;
 
-        const idPlanilha = 'A Vista';
         const dateFormat = 'DD/MM/YYYY';
+
         const colunas = {
             convenio: 4,
             proposta: 5,
@@ -32,9 +32,13 @@
             data: 11,
             linha: 12,
             taxa: 13,
+            produto: 14,
             nmLinha: 15,
+            tabela: 17,
+            pcComissao: 22,
             comissao: 23,
-            seguro: 27
+            restricao: 24,
+            seguro: 27,
         }
 
         $scope.$watch('vm["relatorio"]', function (value) {
@@ -71,7 +75,7 @@
 
                         var periodo = moment.max(datas);
 
-                        $scope.$apply(() =>{
+                        $scope.$apply(() => {
 
                             vm.operacoes = [];
                             vm.dados = {};
@@ -79,7 +83,7 @@
                             vm.dados.empresa = vm.empresas.find((e) => e.mci == mci);
                             vm.dados.qtdBase = 0
                             vm.dados.qtdArq = planilha.actualRowCount - 1; // header
-    
+
                             console.info('dados', vm.dados)
 
                             cfpLoadingBar.complete()
@@ -102,6 +106,16 @@
                 vm.agentes = resp.data;
                 console.info('Agentes', vm.agentes)
             })
+
+            fopagServices.getTaxas().then((resp) => {
+                vm.taxas = resp.data;
+                Object.keys(vm.taxas).forEach(key => {
+                    vm.taxas[key].forEach(it => {
+                        it.comissao = parseFloat((it.comissao / 100).toFixed(4))
+                    })
+                })
+                console.info('taxas', vm.taxas)
+            })
         }
 
         vm.processar = () => {
@@ -117,6 +131,52 @@
                 var opr = criarRegistroBd(linha);
                 vm.operacoes.push(opr);
             });
+
+            console.info('operacoes', vm.operacoes)
+
+            let valorOriginal = 0;
+            let valorNovo = 0;
+
+            vm.operacoes = vm.operacoes.filter(op => op.restricao != 'Sim')
+            vm.operacoes.forEach(op => {
+                valorOriginal += op.comissao;
+                valorNovo += op.comissao;
+
+                let taxas = vm.taxas[op.produto]
+
+                if (!taxas) { return; }
+
+                let taxa = taxas.find(t => t.taxa_min <= op.taxa && t.taxa_max >= op.taxa && t.prazo_min <= op.prazo && t.prazo_max >= op.prazo)
+                if (!taxa) { return; }
+
+                let pcComissao = taxa.comissao;
+
+                if (pcComissao < op.pcComissao) {
+                    let comissaoOld = op.comissao;
+                    let comissaoNova = calcularComissao(op.valorLiquido, pcComissao);
+
+                    if (comissaoOld < comissaoNova) {
+                        console.info(`[Não Alterou] OPR: ${op.proposta}: Comissao antiga ${comissaoOld}, nova comissão ${comissaoNova}`);
+                        return;
+                    }
+
+                    op.comissao = comissaoNova;
+                    op.pcComissao = pcComissao;
+
+                    valorNovo -= comissaoOld;
+                    valorNovo += comissaoNova;
+
+                    console.info(`OPR: ${op.proposta}: Comissao antiga ${comissaoOld}, nova comissão ${comissaoNova}`);
+                }
+            });
+
+            console.info(`Valor Antiga: ${valorOriginal}, novo valor ${valorNovo}`);
+        }
+
+
+        function calcularComissao(valor, pcComissao) {
+            let resultado = valor * pcComissao;
+            return parseFloat(resultado.toFixed(2));
         }
 
         vm.gerarPlanilhas = () => {
@@ -455,6 +515,11 @@
             reg.comissao = linha.getCell(colunas.comissao).value;
             reg.taxa = linha.getCell(colunas.taxa).value;
             reg.seguro = linha.getCell(colunas.seguro).value;
+            reg.tabela = linha.getCell(colunas.tabela).value;
+            reg.pcComissao = linha.getCell(colunas.pcComissao).value;
+            reg.pcComissao = linha.getCell(colunas.pcComissao).value;
+            reg.produto = linha.getCell(colunas.produto).value;
+            reg.restricao = linha.getCell(colunas.restricao).value;
 
             return reg;
         }
