@@ -1,0 +1,50 @@
+/*! gaw-file-upload - v1.1.5 - 2019-05-06 */
+
+/**
+ * FileUpload
+ */
+/**
+ * Variables
+ */
+/**
+ * Colors
+ */
+/* CHIP */
+/* GRIDLINE */
+/* BUTTONS */
+/* TOGGLE SWITCH */
+/* GRID */
+/* Forms */
+.dropbox {
+  background: #f8f8f8;
+  border: 4px dashed #ddd;
+  margin: 1rem 0;
+  padding: 1rem;
+  text-align: center;
+  width: 100%; }
+  .dropbox__over {
+    border: 5px dashed #0090f2; }
+
+.file-upload {
+  display: block; }
+
+.file-placeholder {
+  background: #eee;
+  border-radius: 6px;
+  line-height: 1.5rem;
+  margin: 0;
+  padding: 6px 12px;
+  width: 100%; }
+  .file-placeholder .btn {
+    color: #263238;
+    vertical-align: bottom; }
+  .file-placeholder .label {
+    border-radius: .5rem;
+    font-size: .625rem;
+    font-weight: 500;
+    line-height: .5rem; }
+  .file-placeholder .row {
+    width: auto; }
+
+.form-field {
+  font-size: .85rem; }

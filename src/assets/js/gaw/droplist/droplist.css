@@ -1,0 +1,94 @@
+/*! gaw-droplist - v1.0.27 - 2019-07-22 */
+
+/**
+ * Droplist
+ */
+/**
+ * Variables
+ */
+/**
+ * Colors
+ */
+/* CHIP */
+/* GRIDLINE */
+/* BUTTONS */
+/* TOGGLE SWITCH */
+/* DATEPICKER */
+/* INPUT TAG */
+/* SLIDER */
+/* PAGINATION */
+/* Forms */
+/* ACCORDION */
+.droplist {
+  margin-bottom: 0;
+  position: relative;
+  text-align: left; 
+  padding-left: 0;}
+  .droplist.has-content .droplist__arrow {
+    display: block; }
+  .droplist.is-open {
+    color: rgba(38, 50, 56, 0.9); }
+    .droplist.is-open .droplist__inner {
+      background-color: #fff;
+      border-radius: 4px;
+      box-shadow: 0 0 2px 0 rgba(176, 190, 197, 0.68), 0 0 7px 0 rgba(96, 125, 139, 0.24);
+      position: absolute;
+      width: 100%;
+      z-index: 10; }
+      .droplist.is-open .droplist__inner > span {
+        border-radius: 0;
+        box-shadow: none; 
+        border: none;}
+      .droplist.is-open .droplist__inner .droplist__title {
+        opacity: .25; }
+      .droplist.is-open .droplist__inner .droplist__content {
+        display: block; }
+  .droplist__arrow {
+    display: none; }
+  .droplist__inner {
+    color: rgba(69, 90, 100, 0.81);
+    font-size: 1rem;
+    letter-spacing: .1px;
+    line-height: 1.5rem;
+    border: none;
+    border-radius: none; }
+    .droplist__inner > span {
+      -ms-flex-align: center;
+          align-items: center;
+      background-color: #fff;
+      border-radius: 4px;
+      border: 1px solid #aaa;
+      box-shadow: 0 1px 0 #fff inset;
+      cursor: pointer;
+      display: -ms-flexbox;
+      display: flex;
+      padding: .325rem .75rem;
+      -moz-user-select: none;
+       -ms-user-select: none;
+           user-select: none; }
+      .droplist__inner > span > i + span {
+        -ms-flex: 1;
+            flex: 1;
+        margin-left: 1rem;
+        font-family: "Roboto"; }
+      .droplist__inner > span > span {
+        display: -ms-flexbox;
+        display: flex;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+  .droplist__content {
+    display: none;
+    font-size: .875rem;
+    max-height: 25rem;
+    overflow: auto;
+    padding: 0.5rem 1rem; }
+    .droplist__content > ul {
+      margin-bottom: 0; }
+  .droplist__reverse .droplist__content {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 -1px 2px 0 rgba(176, 190, 197, 0.68);
+    position: absolute;
+    width: 100%;
+    z-index: 10; }

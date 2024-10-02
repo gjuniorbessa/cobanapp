@@ -1,0 +1,165 @@
+/*! gaw-timeline - v1.0.22 - 2018-12-11 */
+
+/**
+ * Timeline
+ */
+/**
+ * Variables
+ */
+/**
+ * Colors
+ */
+.timeline {
+  color: rgba(38, 50, 56, 0.85);
+  font-size: .9rem;
+  letter-spacing: .1px;
+  list-style: none;
+  padding-left: 0;
+  text-align: left;
+  overflow: hidden; }
+  .timeline.timeline--spaced article {
+    margin-left: 1.5rem;
+    padding-left: 1.5rem; }
+  .timeline.timeline--compact article:after {
+    top: 1rem; }
+  .timeline > li {
+    display: -ms-flexbox;
+    display: flex; }
+    .timeline > li.timeline--compact--no-image article:after {
+      top: 1.5rem; }
+    .timeline > li:first-child article::after {
+      background-color: #fff; }
+  .timeline time {
+    font-size: .825rem;
+    text-align: right;
+    width: 4.5rem;
+    margin-top: .1rem; }
+    .timeline time > small {
+      display: block;
+      font-size: .8rem; }
+  .timeline article {
+    margin-left: 1rem;
+    padding: 0 0 1rem 1rem;
+    position: relative;
+    width: 100%; }
+    .timeline article::before {
+      background-color: #979797;
+      content: '';
+      height: 100%;
+      left: -1px;
+      position: absolute;
+      top: .5rem;
+      width: 1px; }
+    .timeline article::after {
+      background-color: #979797;
+      border: 0.25rem solid #979797;
+      border-radius: 50%;
+      content: '';
+      display: block;
+      height: 13px;
+      left: -7px;
+      position: absolute;
+      top: 5px;
+      width: 13px; }
+    .timeline article p {
+      color: rgba(38, 50, 56, 0.9); }
+      .timeline article p:last-of-type {
+        margin-bottom: 0; }
+    .timeline article small {
+      font-size: .825rem; }
+  .timeline > .timeline--danger article::before {
+    background-color: #d9534f; }
+  .timeline > .timeline--danger article::after {
+    background-color: #d9534f;
+    border: 0.25rem solid #d9534f; }
+  .timeline > .timeline--warning article::before {
+    background-color: #f0ad4e; }
+  .timeline > .timeline--warning article::after {
+    background-color: #f0ad4e;
+    border: 0.25rem solid #f0ad4e; }
+  .timeline > .timeline--info article::before {
+    background-color: #5bc0de; }
+  .timeline > .timeline--info article::after {
+    background-color: #5bc0de;
+    border: 0.25rem solid #5bc0de; }
+  .timeline > .timeline--success article::before {
+    background-color: #8bc34a; }
+  .timeline > .timeline--success article::after {
+    background-color: #8bc34a;
+    border: 0.25rem solid #8bc34a; }
+  .timeline > .timeline--primary article::before {
+    background-color: #007acc; }
+  .timeline > .timeline--primary article::after {
+    background-color: #007acc;
+    border: 0.25rem solid #007acc; }
+  .timeline .is-open .timeline__details {
+    max-height: 32rem; }
+  .timeline__details {
+    font-size: .9rem;
+    margin-top: .5rem;
+    max-height: 0;
+    overflow: hidden;
+    position: relative;
+    transition: max-height .3s ease-in; }
+
+.timeline--compact i {
+  position: absolute;
+  transform: translateX(-50%);
+  left: 0;
+  z-index: 20;
+  top: 20px; }
+
+.timeline--compact img {
+  object-fit: cover;
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  left: 0;
+  top: 18px;
+  transform: translateX(-50%);
+  z-index: 20; }
+
+.timeline--default i {
+  position: absolute;
+  transform: translateX(-50%);
+  left: 0;
+  z-index: 20;
+  top: 9px; }
+
+.timeline--default img {
+  object-fit: cover;
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  left: 0;
+  top: 7px;
+  transform: translateX(-50%);
+  z-index: 20; }
+
+.timeline article.timeline__icon, .timeline article.timeline__image {
+  cursor: pointer;
+  position: relative;
+  z-index: 1; }
+  .timeline article.timeline__icon:after, .timeline article.timeline__image:after {
+    height: 2rem;
+    width: 2rem;
+    left: -1rem;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-family: "Material Icons";
+    -moz-font-feature-settings: 'liga' 1;
+         font-feature-settings: 'liga' 1;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: normal;
+    line-height: 1;
+    text-rendering: auto;
+    text-transform: none;
+    word-wrap: normal;
+    font-size: 1.5rem;
+    text-align: center;
+    padding-top: 2px;
+    background-color: white;
+    border-width: 2px !important; }

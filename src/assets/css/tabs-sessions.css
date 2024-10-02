@@ -1,0 +1,72 @@
+.tabs--sessions {
+    font-size: .875rem;
+    font-weight: 500;
+    letter-spacing: .1px;
+    line-height: 1rem;
+    margin-bottom: 0;
+    box-shadow: inset 0 -1px 0 0 #b7b7b7;
+    color: #546e7a;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+.tabs--sessions.is-disabled {
+    font-style: normal; 
+}
+
+.is-disabled {
+    font-style: italic !important;
+}
+
+.tabs--sessions>li {
+    -ms-flex-align: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    -ms-flex-line-pack: center;
+    align-content: center;
+}
+
+.tabs--sessions>li:first-child {
+    margin-left: .75rem;
+}
+
+.tabs--sessions>li:not(:first-child) {
+    margin-left: .75rem;
+}
+
+.tabs--sessions>li:not(:last-child) {
+    margin-right: .75rem;
+}
+
+.tabs--sessions>li.is-active {
+    box-shadow: inset 0 -3px 0 0 #007acc;
+    color: #263238;
+}
+
+.tabs--sessions > li.is-open:not(.is-disabled):not(.is-active) > a, 
+.tabs--sessions > li:focus:not(.is-disabled):not(.is-active) > a, 
+.tabs--sessions > li:hover:not(.is-disabled):not(.is-active) > a {
+    box-shadow: inset 0 -3px 0 0 #607d8b;
+    color: #607d8b; 
+}
+
+.tabs--sessions > li.is-disabled {
+    color: #cfd8dc; 
+}
+
+.tabs--sessions > li.is-disabled > a {
+        cursor: default; 
+}
+
+.tabs--sessions>li>a {
+    color: inherit;
+    margin: -1rem 0;
+    padding: .75rem 0;
+    text-decoration: none;
+    text-transform: uppercase;
+}

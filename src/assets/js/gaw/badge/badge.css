@@ -1,0 +1,40 @@
+/*! gaw-badge - v1.0.9 - 2017-02-07 */
+
+/**
+ * Badge
+ */
+.badge {
+  -ms-flex-align: center;
+      align-items: center;
+  background-color: #b8e986;
+  border: 1px solid #b8e986;
+  border-radius: 1rem;
+  color: #0288d1;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: .75rem;
+  font-weight: 700;
+  height: 1rem;
+  -ms-flex-pack: center;
+      justify-content: center;
+  letter-spacing: -1px;
+  min-width: 1rem;
+  padding: .125rem;
+  position: absolute;
+  text-align: center;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  z-index: 100; }
+  .badge--error {
+    background-color: #ef5350;
+    border-color: #ef5350;
+    color: #fff; }
+  .badge--bottom {
+    bottom: 0; }
+  .badge--left {
+    left: 0; }
+  .badge--right {
+    right: 0; }
+  .badge--top {
+    top: 0; }

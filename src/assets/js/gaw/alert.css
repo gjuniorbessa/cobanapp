@@ -1,0 +1,95 @@
+/*! gaw-alert - v1.0.14 - 2017-02-07 */
+
+/**
+ * Alert
+ */
+.gc-alert {
+  background-color: #fff;
+  border-radius: 3px;
+  font-size: .9375rem;
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: left; }
+  .alert.is-open .alert__details {
+    display: block; }
+  .alert__area {
+    -ms-flex-align: start;
+        align-items: flex-start;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+        flex-direction: row;
+    padding: .5rem; }
+    .alert__area > i {
+      margin-right: 1rem; }
+      @media screen and (max-width: 50rem) {
+        .alert__area > i {
+          display: none; } }
+    @media screen and (max-width: 50rem) {
+      .alert__area > .btn {
+        display: none; } }
+  .alert__button {
+    background-color: transparent;
+    border: 0;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    opacity: .54;
+    padding: 0 .5rem; }
+    @media screen and (min-width: 50rem) {
+      .alert__button {
+        display: none; } }
+  .alert__details {
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 0 0 3px 3px;
+    display: none;
+    font-size: .8125rem;
+    line-height: 1.25rem;
+    overflow: hidden;
+    padding: .5rem 1rem; }
+  .alert + .alert {
+    margin-top: -.5rem; }
+  .alert--success {
+    background-color: #8bc34a;
+    color: #fff; }
+  .alert--info {
+    background-color: #59bcff;
+    color: rgba(0, 0, 0, 0.87); }
+    .alert--info > i {
+      color: rgba(69, 89, 100, 0.81); }
+  .alert--warn {
+    background-color: #ffd740;
+    color: rgba(0, 0, 0, 0.87); }
+    .alert--warn > i {
+      color: rgba(69, 89, 100, 0.81); }
+  .alert--error {
+    background-color: #ef5350;
+    color: #fff; }
+  .alert--square {
+    border-radius: 0;
+    margin-bottom: 0; }
+  .alert__desc {
+    -ms-flex: 1;
+        flex: 1; }
+    .alert__desc > p {
+      margin: 0;
+    }
+    .alert__desc + button {
+      margin-left: 1rem; }
+  .alert__close {
+    background-color: transparent;
+    border: 0;
+    color: #000;
+    display: inline-block;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    margin-left: .5rem;
+    opacity: .54;
+    padding: 0; }
+    .alert__close > span {
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      padding: 0 .5rem; }
+  .alert p,
+  .alert .btn,
+  .alert ul {
+    margin-bottom: 0; }

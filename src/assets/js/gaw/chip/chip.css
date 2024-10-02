@@ -1,0 +1,209 @@
+/*! gaw-chip - v1.1.24 - 2019-03-15 */
+
+/**
+ * Chip
+ */
+/**
+ * Variables
+ */
+/**
+ * Colors
+ */
+.chip {
+  -ms-flex-align: center;
+      align-items: center;
+  color: #1f292e;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  padding-bottom: .75rem;
+  padding-top: .75rem;
+  text-align: left;
+  vertical-align: middle; }
+  .chip__desc {
+    -ms-flex-align: baseline;
+        align-items: baseline;
+    display: -ms-flexbox;
+    display: flex; }
+  .chip:not(.chip--column) > span:not(:only-child) {
+    margin-left: .5rem; }
+  .chip:focus {
+    outline: 2px dashed #007acc;
+    outline-offset: 1px; }
+  .chip > figure > i {
+    color: rgba(31, 41, 46, 0.7);
+    font-size: 2rem; }
+  .chip > figure > img {
+    border-radius: 3px;
+    height: 2.25rem;
+    width: 2.25rem; }
+    .chip > figure > img + span {
+      display: none; }
+  .chip > span {
+    display: block;
+    white-space: nowrap; }
+    .chip > span > small {
+      color: rgba(31, 41, 46, 0.7);
+      display: block;
+      font-size: .8125rem; }
+  .chip__title {
+    -ms-flex-align: baseline;
+        align-items: baseline;
+    display: -ms-inline-flexbox;
+    display: inline-flex; }
+    .chip__title > small {
+      font-size: .75rem;
+      margin-left: .5rem; }
+  .chip--sm {
+    font-size: .9375rem;
+    padding-bottom: .5rem;
+    padding-top: .5rem; }
+    .chip--sm > figure > i {
+      font-size: 1.5rem; }
+    .chip--sm .chip__desc {
+      line-height: 1rem; }
+    .chip--sm > span > small {
+      color: rgba(31, 41, 46, 0.7);
+      display: block;
+      font-size: .8125rem; }
+    .chip--sm .chip__title {
+      line-height: .75rem; }
+  .chip--lg > span {
+    line-height: 1.5rem; }
+    .chip--lg > span > small {
+      line-height: 1.25rem; }
+  .chip--big {
+    font-size: 1.5rem; }
+    .chip--big > figure {
+      height: 3rem;
+      width: 3rem; }
+      .chip--big > figure > i {
+        font-size: 3rem;
+        font-style: normal; }
+      .chip--big > figure > span {
+        font-size: 1.5rem;
+        font-style: normal; }
+      .chip--big > figure > img {
+        height: 3rem;
+        width: 3rem; }
+    .chip--big > span {
+      line-height: 1.5rem; }
+      .chip--big > span > small {
+        font-size: .875rem; }
+    .chip--big .chip__title {
+      line-height: 1.25rem; }
+  .chip--xlg > figure {
+    height: 4rem;
+    width: 4rem; }
+    .chip--xlg > figure > img {
+      height: 4rem;
+      width: 4rem; }
+    .chip--xlg > figure > i {
+      font-size: 4rem; }
+    .chip--xlg > figure > span {
+      font-size: 2rem;
+      font-style: normal; }
+  .chip--xlg > span {
+    font-size: 2rem;
+    line-height: 2rem; }
+    .chip--xlg > span > small {
+      font-size: .875rem; }
+  .chip--xlg .chip__title {
+    line-height: 1.25rem; }
+  .chip--column {
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-pack: center;
+        justify-content: center; }
+    .chip--column > figure {
+      margin-bottom: 1.25rem; }
+  .chip--reverse {
+    -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse; }
+    .chip--reverse > span {
+      margin-left: 0;
+      margin-right: .5rem;
+      text-align: right; }
+      .chip--reverse > span .chip__desc {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: end;
+            justify-content: flex-end; }
+  .chip--dark {
+    color: #fff; }
+  .chip--updown > span {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse; }
+  .chip--center {
+    text-align: center; }
+    .chip--center span {
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .chip--double .chip__desc {
+    color: inherit;
+    font-size: inherit; }
+  .chip--inner {
+    padding-bottom: 0;
+    padding-top: 0; }
+  .chip--horizontal > span {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center; }
+  .chip--horizontal .chip__title, .chip--horizontal .chip__desc {
+    display: inline; }
+  .chip--horizontal .chip__title {
+    -ms-flex-order: 1;
+        order: 1;
+    margin-left: .5rem; }
+  .chip-group {
+    -ms-flex-align: center;
+        align-items: center;
+    display: -ms-flexbox;
+    display: flex; }
+    .chip-group > .chip {
+      -ms-flex: 1;
+          flex: 1; }
+  .chip + .btn-group {
+    margin-top: .75rem; }
+  .chip .chip--media {
+    margin-right: .25rem; }
+  .chip--reverse .chip--media {
+    margin-left: .25rem;
+    margin-right: 0; }
+  .chip--primary > figure > i,
+  .chip--success > figure > i,
+  .chip--info > figure > i,
+  .chip--warning > figure > i,
+  .chip--danger > figure > i {
+    opacity: 1; }
+  .chip--primary > figure > i {
+    color: #007acc; }
+  .chip--success > figure > i {
+    color: #5f8a2e; }
+  .chip--info > figure > i {
+    color: #289fc3; }
+  .chip--warning > figure > i {
+    color: #d38312; }
+  .chip--danger > figure > i {
+    color: #ec3936; }
+  .chip--primary .chip--media,
+  .chip--success .chip--media,
+  .chip--info .chip--media,
+  .chip--warning .chip--media,
+  .chip--danger .chip--media {
+    color: #fff;
+    font-weight: 500; }
+  .chip--primary .chip--media {
+    background-color: #007acc; }
+  .chip--success .chip--media {
+    background-color: #5f8a2e; }
+  .chip--info .chip--media {
+    background-color: #289fc3; }
+  .chip--warning .chip--media {
+    background-color: #d38312; }
+  .chip--danger .chip--media {
+    background-color: #ec3936; }

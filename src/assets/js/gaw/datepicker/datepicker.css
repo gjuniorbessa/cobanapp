@@ -1,0 +1,104 @@
+/*! gaw-datepicker - v1.0.29 - 2019-01-03 */
+
+/**
+ * Datepicker
+ */
+/**
+ * Variables
+ */
+/**
+ * Colors
+ */
+[bb-datepicker-popup-wrap] + .btn[disabled] {
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.3) !important;
+  cursor: default; }
+
+.datepicker {
+  font-size: .8125rem;
+  line-height: 1.25rem;
+  max-width: 19.5rem;
+  min-width: 16rem; }
+  .datepicker__title {
+    font-size: 24px;
+    font-weight: 400; }
+  .datepicker .btn[disabled] {
+    background-color: transparent;
+    color: rgba(0, 0, 0, 0.3) !important;
+    cursor: default; }
+  .datepicker > table {
+    background-color: #fff;
+    border-collapse: collapse;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px 0 rgba(96, 125, 139, 0.24), 0 0 2px 0 rgba(96, 125, 139, 0.12);
+    width: 100%; }
+    .datepicker > table > thead {
+      background-color: #007acc;
+      color: #fff; }
+      .datepicker > table > thead button {
+        margin: 0;
+        padding: .25rem; }
+    .datepicker > table .datepicker-day > tbody button {
+      -ms-flex-align: center;
+          align-items: center;
+      border: 0;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: center;
+          justify-content: center;
+      margin: 0;
+      outline: 0;
+      padding: .5rem;
+      width: 2rem; }
+      .datepicker > table .datepicker-day > tbody button > span {
+        font-size: .75rem; }
+  .datepicker th {
+    text-transform: uppercase; }
+  .datepicker td,
+  .datepicker th {
+    padding: 0; }
+  .datepicker td {
+    text-align: center; }
+    .datepicker td button:not(.label):not([disabled]):hover {
+      background-color: #ddd; }
+  .datepicker button {
+    -ms-flex-align: center;
+        align-items: center;
+    border: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    margin: 0;
+    outline: 0;
+    padding: .5rem .75rem;
+    width: 100%; }
+    .datepicker button.label {
+      border-radius: 0;
+      font-size: inherit;
+      line-height: inherit; }
+    .datepicker button:not(.label) {
+      background-color: inherit;
+      color: inherit; }
+  .datepicker small {
+    font-size: 12px;
+    letter-spacing: .9px;
+    line-height: 2rem; }
+  .datepicker .is-active {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1); }
+
+.datepicker-popup {
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 1.5px 0 rgba(120, 144, 156, 0.3), 0 0 1.5px 0 rgba(120, 144, 156, 0.4);
+  list-style: none;
+  padding-left: 0;
+  position: absolute;
+  z-index: 100; }
+  .datepicker-popup.dropdown-menu-popup {
+    display: block;
+    float: none;
+    left: -9999px;
+    margin: 0;
+    top: -9999px;
+    visibility: hidden; }

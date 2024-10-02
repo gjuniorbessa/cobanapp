@@ -1,0 +1,47 @@
+<div class="container" ng-controller="fopagController as vm" ng-init="vm.init()">
+
+    <header class="subhead">
+        <h2>Folha de Pagamento</h2>
+    </header>
+
+    <section class="panel">
+        <article>
+            <div class="row">
+                <div class="col-xs-6">
+                    <bb-file-upload class="mb-0" bb-title-label="Arquivo do Relatório:"
+                        bb-select-label="Nenhum arquivo selecionado"
+                        ngf-accept="'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'"
+                        bb-btn-label="Selecionar o arquivo do relatório" bb-file="vm.relatorio">
+                    </bb-file-upload>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <section class="panel" ng-if="vm.dados">
+        <article>
+            <ul class="gridline gridline--justify">
+                <li>
+                    <bb-chip bb-title="Período" bb-desc="{{vm.dados.periodo}}"></bb-chip>
+                </li>
+                <li>
+                    <bb-chip bb-title="Empresa" bb-desc="{{vm.dados.empresa.nome}}"></bb-chip>
+                </li>
+                <li>
+                    <bb-chip bb-title="Qtd Registros Lidos" bb-desc="{{vm.dados.qtdArq}}"></bb-chip>
+                </li>
+                <li>
+                    <bb-chip bb-title="Qtd Registros Base" bb-desc="{{vm.dados.qtdBase}}"></bb-chip>
+                </li>
+            </ul>
+        </article>
+        <footer class="text-right">
+            <a class="btn btn--primary" ng-click="vm.processar()">
+                Processar
+            </a>
+            <a class="btn btn--primary" ng-click="vm.gerarPlanilhas()" ng-show="vm.operacoes.length > 0">
+                Gerar Planilhas
+            </a>
+        </footer>
+    </section>
+</div>
