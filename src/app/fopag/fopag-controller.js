@@ -12,8 +12,8 @@
         }])
         .controller('fopagController', fopagController);
 
-    fopagController.$inject = ['$rootScope', '$scope', '$q', 'FileSaver', 'Blob', 'fopagServices', 'estilos', 'utils'];
-    function fopagController($rootScope, $scope, $q, FileSaver, Blob, fopagServices, estilos, utils) {
+    fopagController.$inject = ['$rootScope', '$scope', '$q', 'FileSaver', 'Blob', 'fopagServices', 'estilos', 'utils', 'cfpLoadingBar'];
+    function fopagController($rootScope, $scope, $q, FileSaver, Blob, fopagServices, estilos, utils, cfpLoadingBar) {
 
         var vm = this;
 
@@ -39,9 +39,11 @@
 
         $scope.$watch('vm["relatorio"]', function (value) {
 
-            vm.dados = {};
+            vm.dados = null;
 
             if (value) {
+
+                cfpLoadingBar.start()
 
                 value.arrayBuffer().then((r) => {
 
@@ -69,14 +71,19 @@
 
                         var periodo = moment.max(datas);
 
-                        vm.operacoes = [];
-                        vm.dados = {};
-                        vm.dados.periodo = periodo.format('MMMM/YYYY');
-                        vm.dados.empresa = vm.empresas.find((e) => e.mci == mci);
-                        vm.dados.qtdBase = 0
-                        vm.dados.qtdArq = planilha.actualRowCount - 1; // header
+                        $scope.$apply(() =>{
 
-                        console.info('dados', vm.dados)
+                            vm.operacoes = [];
+                            vm.dados = {};
+                            vm.dados.periodo = periodo.format('MMMM/YYYY');
+                            vm.dados.empresa = vm.empresas.find((e) => e.mci == mci);
+                            vm.dados.qtdBase = 0
+                            vm.dados.qtdArq = planilha.actualRowCount - 1; // header
+    
+                            console.info('dados', vm.dados)
+
+                            cfpLoadingBar.complete()
+                        })
                     })
                 })
             }
@@ -110,11 +117,7 @@
                 var opr = criarRegistroBd(linha);
                 vm.operacoes.push(opr);
             });
-
-            console.info('operacoes', vm.operacoes)
         }
-
-
 
         vm.gerarPlanilhas = () => {
 
