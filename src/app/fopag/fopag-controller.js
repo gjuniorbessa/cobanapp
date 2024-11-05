@@ -222,7 +222,7 @@
 
             var lista = operacoes.filter((r) => r.chave == chave);
 
-            worksheet.mergeCells('A1', maisColunas ? 'V1 ' : 'L1');
+            worksheet.mergeCells('A1', maisColunas ? 'W1 ' : 'M1');
             worksheet.getCell('A1').value = `${vm.dados.periodo} - ${vm.dados.empresa.nome} - ${agente}`;
 
             var headers = [
@@ -231,6 +231,7 @@
                 'Data',
                 'Convênio',
                 'Linha',
+                'Produto',
                 'Prazo',
                 'Taxa',
                 'Vl. Bruto',
@@ -261,6 +262,7 @@
                 { key: 'data', width: 10 },
                 { key: 'convenio', width: 9 },
                 { key: 'linha', width: 50 },
+                { key: 'produto', width: 50 },
                 { key: 'prazo', width: 8 },
                 { key: 'taxa', width: 8 },
                 { key: 'valorBruto', width: 15 },
