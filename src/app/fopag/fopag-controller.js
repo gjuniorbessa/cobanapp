@@ -142,10 +142,7 @@
                 valorOriginal += op.comissao;
                 valorNovo += op.comissao;
 
-                let produto = op.produto.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
-                produto = produto.toUpperCase();
-
-                let taxas = vm.taxas[produto]
+                let taxas = vm.taxas[op.produto]
 
                 if (!taxas) { return; }
 

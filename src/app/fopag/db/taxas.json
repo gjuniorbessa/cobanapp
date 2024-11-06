@@ -29,7 +29,7 @@
         { "taxa_min": 1.66, "taxa_max": 1.75, "prazo_min": 36, "prazo_max": 120, "comissao": 4.9 },
         { "taxa_min": 1.76, "taxa_max": 1000, "prazo_min": 36, "prazo_max": 120, "comissao": 5.4 }
     ],
-    "NAO CONSIGNADO": [
+    "NÃO CONSIGNADO": [
         { "taxa_min": 2.4, "taxa_max": 3.74, "prazo_min": 13, "prazo_max": 96, "comissao": 1.6 },
         { "taxa_min": 3.75, "taxa_max": 4.6, "prazo_min": 13, "prazo_max": 96, "comissao": 4.8 },
         { "taxa_min": 4.61, "taxa_max": 1000, "prazo_min": 13, "prazo_max": 96, "comissao": 5.4 }
