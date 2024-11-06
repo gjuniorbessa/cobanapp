@@ -142,7 +142,10 @@
                 valorOriginal += op.comissao;
                 valorNovo += op.comissao;
 
-                let taxas = vm.taxas[op.produto]
+                let produto = op.produto.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+                produto = op.produto.toUpperCase();
+
+                let taxas = vm.taxas[produto]
 
                 if (!taxas) { return; }
 
@@ -218,11 +221,9 @@
             let fAgente = vm.agentes.find((a) => a.chave == chave);
             let agente = fAgente ? fAgente.nome : `Não Cadastrado (${chave})`;
 
-            var maisColunas = (!fAgente || !fAgente.comissao) && vm.dados.empresa.mci == 449624348;
-
             var lista = operacoes.filter((r) => r.chave == chave);
 
-            worksheet.mergeCells('A1', maisColunas ? 'W1 ' : 'M1');
+            worksheet.mergeCells('A1', 'M1');
             worksheet.getCell('A1').value = `${vm.dados.periodo} - ${vm.dados.empresa.nome} - ${agente}`;
 
             var headers = [
@@ -241,19 +242,6 @@
                 'Comissão',
             ];
 
-            if (maisColunas) {
-                headers.push('% Com.')
-                headers.push('Comissão')
-                headers.push('% Com.')
-                headers.push('Comissão')
-                headers.push('% Com.')
-                headers.push('Comissão')
-                headers.push('% Com.')
-                headers.push('Comissão')
-                headers.push('Pago BB')
-                headers.push('Nome Agente')
-            }
-
             worksheet.getRow(2).values = headers;
 
             var columns = [
@@ -271,20 +259,6 @@
                 { key: 'pcComissao', width: 8 },
                 { key: 'comissao', width: 15 }
             ];
-
-            if (maisColunas) {
-                columns.push({ key: 'pcComissao1', width: 8 })
-                columns.push({ key: 'comissao1', width: 12 })
-                columns.push({ key: 'pcComissao2', width: 8 })
-                columns.push({ key: 'comissao2', width: 12 })
-                columns.push({ key: 'pcComissao3', width: 8 })
-                columns.push({ key: 'comissao3', width: 12 })
-                columns.push({ key: 'pcComissao4', width: 8 })
-                columns.push({ key: 'comissao4', width: 12 })
-                columns.push({ key: 'comissaoPagaBB', width: 15 })
-                columns.push({ key: 'nomeAgente', width: 12 })
-            };
-
 
             worksheet.columns = columns;
 
@@ -309,14 +283,6 @@
                 total.valorLiquido += it.valorLiquido;
                 total.comissao += it.comissao;
                 total.seguro += it.seguro;
-
-                if (maisColunas) {
-                    total.comissao1 += it.comissao1;
-                    total.comissao2 += it.comissao2;
-                    total.comissao3 += it.comissao3;
-                    total.comissao4 += it.comissao4;
-                    total.comissaoPagaBB += it.comissaoPagaBB;
-                }
 
                 if ((index + 1) == lista.length) {
                     lnTotal = index + 4;
@@ -346,32 +312,15 @@
                     row.eachCell({ includeEmpty: true }, function (cell, colNumber) {
                         cell.style = utils.clone(vm.estilos.totalStyle);
                     });
-
-                    if (maisColunas) {
-                        row.getCell(22).style = utils.clone(vm.estilos.totalStyle);
-                    }
                 }
             });
 
-            worksheet.getColumn(7).numFmt = '0.00%';
-            worksheet.getColumn(8).numFmt = '"R$ "#,##0.00;[Red]\-"R$ "#,##0.00';
+            worksheet.getColumn(8).numFmt = '0.00%';
             worksheet.getColumn(9).numFmt = '"R$ "#,##0.00;[Red]\-"R$ "#,##0.00';
             worksheet.getColumn(10).numFmt = '"R$ "#,##0.00;[Red]\-"R$ "#,##0.00';
-            worksheet.getColumn(11).numFmt = '0.00%';
-            worksheet.getColumn(12).numFmt = '"R$ "#,##0.00;[Red]\-"R$ "#,##0.00';
-
-            if (maisColunas) {
-                worksheet.getColumn(13).numFmt = '0.00%';
-                worksheet.getColumn(14).numFmt = '"R$ "#,##0.00;[Red]\-"R$ "#,##0.00';
-                worksheet.getColumn(15).numFmt = '0.00%';
-                worksheet.getColumn(16).numFmt = '"R$ "#,##0.00;[Red]\-"R$ "#,##0.00';
-                worksheet.getColumn(17).numFmt = '0.00%';
-                worksheet.getColumn(18).numFmt = '"R$ "#,##0.00;[Red]\-"R$ "#,##0.00';
-                worksheet.getColumn(19).numFmt = '0.00%';
-                worksheet.getColumn(20).numFmt = '"R$ "#,##0.00;[Red]\-"R$ "#,##0.00';
-                worksheet.getColumn(21).numFmt = '"R$ "#,##0.00;[Red]\-"R$ "#,##0.00';
-                worksheet.getColumn(22).numFmt = '"R$ "#,##0.00;[Red]\-"R$ "#,##0.00';
-            }
+            worksheet.getColumn(11).numFmt = '"R$ "#,##0.00;[Red]\-"R$ "#,##0.00';
+            worksheet.getColumn(12).numFmt = '0.00%';
+            worksheet.getColumn(13).numFmt = '"R$ "#,##0.00;[Red]\-"R$ "#,##0.00';
 
             var defer = $q.defer();
 
@@ -534,6 +483,7 @@
 
             reg.convenio = item.convenio;
             reg.proposta = item.proposta;
+            reg.produto = item.produto;
             reg.valorBruto = item.valorBruto;
             reg.valorLiquido = item.valorLiquido;
             reg.prazo = item.prazo;
@@ -547,21 +497,6 @@
                 reg.pcComissao = (item.comissao * agente.comissao) / item.valorLiquido;
                 reg.comissao = item.comissao * agente.comissao;
                 reg.seguro = item.seguro * 0.5;
-            }
-            else if (vm.dados.empresa.mci == 449624348) {
-                reg.pcComissao = (item.comissao * 0.3) / item.valorLiquido;
-                reg.comissao = item.comissao * 0.3;
-                reg.pcComissao1 = (item.comissao * 0.5) / item.valorLiquido;
-                reg.comissao1 = item.comissao * 0.5;
-                reg.pcComissao2 = (item.comissao * 0.4) / item.valorLiquido;
-                reg.comissao2 = item.comissao * 0.4;
-                reg.pcComissao3 = (item.comissao * 0.516) / item.valorLiquido;
-                reg.comissao3 = item.comissao * 0.516;
-                reg.pcComissao4 = (item.comissao * 0.566) / item.valorLiquido;
-                reg.comissao4 = item.comissao * 0.566;
-                reg.comissaoPagaBB = item.comissao;
-                reg.seguro = item.seguro * 0.5;
-                reg.nomeAgente = '';
             }
             else {
                 reg.pcComissao = (item.comissao * vm.dados.empresa.comissao) / item.valorLiquido;
