@@ -1,45 +1,45 @@
 {
     "CONSIGNADO PUBLICO": [
-        { "taxa_min": 1.55, "taxa_max": 1.55, "prazo_min": 36, "prazo_max": 120, "comissao": 0.49 },
-        { "taxa_min": 1.56, "taxa_max": 1.65, "prazo_min": 36, "prazo_max": 120, "comissao": 1.51 },
-        { "taxa_min": 1.66, "taxa_max": 1.75, "prazo_min": 36, "prazo_max": 120, "comissao": 2.56 },
-        { "taxa_min": 1.76, "taxa_max": 1.95, "prazo_min": 36, "prazo_max": 120, "comissao": 3.29 },
-        { "taxa_min": 1.96, "taxa_max": 1000, "prazo_min": 36, "prazo_max": 120, "comissao": 4.2 }
+        { "taxa_min": 1.55, "taxa_max": 1.55, "prazo_min": 36, "prazo_max": 120, "comissao": 0.7 },
+        { "taxa_min": 1.56, "taxa_max": 1.65, "prazo_min": 36, "prazo_max": 120, "comissao": 2.15 },
+        { "taxa_min": 1.66, "taxa_max": 1.75, "prazo_min": 36, "prazo_max": 120, "comissao": 3.65 },
+        { "taxa_min": 1.76, "taxa_max": 1.95, "prazo_min": 36, "prazo_max": 120, "comissao": 4.7 },
+        { "taxa_min": 1.96, "taxa_max": 1000, "prazo_min": 36, "prazo_max": 120, "comissao": 6 }
     ],
     "CONSIGNADO PRIVADO": [
-        { "taxa_min": 1.55, "taxa_max": 1.55, "prazo_min": 24, "prazo_max": 96, "comissao": 0.49 },
-        { "taxa_min": 1.56, "taxa_max": 1.65, "prazo_min": 24, "prazo_max": 96, "comissao": 1.54 },
-        { "taxa_min": 1.66, "taxa_max": 1.75, "prazo_min": 24, "prazo_max": 96, "comissao": 2.1 },
-        { "taxa_min": 1.76, "taxa_max": 1.95, "prazo_min": 24, "prazo_max": 96, "comissao": 3.15 },
-        { "taxa_min": 1.96, "taxa_max": 1000, "prazo_min": 24, "prazo_max": 96, "comissao": 4.2 }
+        { "taxa_min": 1.55, "taxa_max": 1.55, "prazo_min": 24, "prazo_max": 96, "comissao": 0.9 },
+        { "taxa_min": 1.56, "taxa_max": 1.65, "prazo_min": 24, "prazo_max": 96, "comissao": 2.2 },
+        { "taxa_min": 1.66, "taxa_max": 1.75, "prazo_min": 24, "prazo_max": 96, "comissao": 3 },
+        { "taxa_min": 1.76, "taxa_max": 1.95, "prazo_min": 24, "prazo_max": 96, "comissao": 4.5 },
+        { "taxa_min": 1.96, "taxa_max": 1000, "prazo_min": 24, "prazo_max": 96, "comissao": 6 }
     ],
     "CONSIGNADO INSS": [
-        { "taxa_min": 1.55, "taxa_max": 1.63, "prazo_min": 36, "prazo_max": 84, "comissao": 0.56 },
-        { "taxa_min": 1.64, "taxa_max": 1000, "prazo_min": 36, "prazo_max": 48, "comissao": 2.03 },
-        { "taxa_min": 1.64, "taxa_max": 1000, "prazo_min": 49, "prazo_max": 83, "comissao": 3.68 },
-        { "taxa_min": 1.64, "taxa_max": 1000, "prazo_min": 84, "prazo_max": 1000, "comissao": 4.2 }        
+        { "taxa_min": 1.55, "taxa_max": 1.63, "prazo_min": 36, "prazo_max": 84, "comissao": 0.8 },
+        { "taxa_min": 1.64, "taxa_max": 1000, "prazo_min": 36, "prazo_max": 48, "comissao": 2.9 },
+        { "taxa_min": 1.64, "taxa_max": 1000, "prazo_min": 49, "prazo_max": 83, "comissao": 5.25 },
+        { "taxa_min": 1.64, "taxa_max": 1000, "prazo_min": 84, "prazo_max": 1000, "comissao": 6 }        
     ],
     "CONSIGNADO MPDG": [
-        { "taxa_min": 1.55, "taxa_max": 1.55, "prazo_min": 36, "prazo_max": 96, "comissao": 0.63 },     
-        { "taxa_min": 1.56, "taxa_max": 1.65, "prazo_min": 36, "prazo_max": 96, "comissao": 2.17 },     
-        { "taxa_min": 1.66, "taxa_max": 1.75, "prazo_min": 36, "prazo_max": 96, "comissao": 3.82 },     
-        { "taxa_min": 1.76, "taxa_max": 1000, "prazo_min": 36, "prazo_max": 96, "comissao": 4.2 }
+        { "taxa_min": 1.55, "taxa_max": 1.55, "prazo_min": 36, "prazo_max": 96, "comissao": 0.9 },     
+        { "taxa_min": 1.56, "taxa_max": 1.65, "prazo_min": 36, "prazo_max": 96, "comissao": 3.1 },     
+        { "taxa_min": 1.66, "taxa_max": 1.75, "prazo_min": 36, "prazo_max": 96, "comissao": 5.45 },     
+        { "taxa_min": 1.76, "taxa_max": 1000, "prazo_min": 36, "prazo_max": 96, "comissao": 6 }
     ],
     "CONSIGNADO SP": [
-        { "taxa_min": 1.55, "taxa_max": 1.55, "prazo_min": 36, "prazo_max": 120, "comissao": 0.88 },     
-        { "taxa_min": 1.56, "taxa_max": 1.65, "prazo_min": 36, "prazo_max": 120, "comissao": 1.73 },     
-        { "taxa_min": 1.66, "taxa_max": 1.75, "prazo_min": 36, "prazo_max": 120, "comissao": 2.8 },
-        { "taxa_min": 1.76, "taxa_max": 1.85, "prazo_min": 36, "prazo_max": 120, "comissao": 3.57 },
-        { "taxa_min": 1.86, "taxa_max": 1.95, "prazo_min": 36, "prazo_max": 120, "comissao": 3.64 },
-        { "taxa_min": 1.96, "taxa_max": 1000, "prazo_min": 36, "prazo_max": 120, "comissao": 4.2 }
+        { "taxa_min": 1.55, "taxa_max": 1.55, "prazo_min": 36, "prazo_max": 120, "comissao": 1.2 },     
+        { "taxa_min": 1.56, "taxa_max": 1.65, "prazo_min": 36, "prazo_max": 120, "comissao": 2.47 },     
+        { "taxa_min": 1.66, "taxa_max": 1.75, "prazo_min": 36, "prazo_max": 120, "comissao": 4 },
+        { "taxa_min": 1.76, "taxa_max": 1.85, "prazo_min": 36, "prazo_max": 120, "comissao": 5.1 },
+        { "taxa_min": 1.86, "taxa_max": 1.95, "prazo_min": 36, "prazo_max": 120, "comissao": 5.2 },
+        { "taxa_min": 1.96, "taxa_max": 1000, "prazo_min": 36, "prazo_max": 120, "comissao": 6 }
     ],
     "NÃO CONSIGNADO": [
-        { "taxa_min": 2.67, "taxa_max": 3.74, "prazo_min": 13, "prazo_max": 96, "comissao": 0.88 },
-        { "taxa_min": 3.75, "taxa_max": 4.6, "prazo_min": 13, "prazo_max": 96, "comissao": 2.59 },
-        { "taxa_min": 4.61, "taxa_max": 5.5, "prazo_min": 13, "prazo_max": 96, "comissao": 3.92 },
-        { "taxa_min": 5.51, "taxa_max": 1000, "prazo_min": 13, "prazo_max": 96, "comissao": 4.2 }
+        { "taxa_min": 2.67, "taxa_max": 3.74, "prazo_min": 13, "prazo_max": 96, "comissao": 1.25 },
+        { "taxa_min": 3.75, "taxa_max": 4.6, "prazo_min": 13, "prazo_max": 96, "comissao": 3.7 },
+        { "taxa_min": 4.61, "taxa_max": 5.5, "prazo_min": 13, "prazo_max": 96, "comissao": 5.6 },
+        { "taxa_min": 5.51, "taxa_max": 1000, "prazo_min": 13, "prazo_max": 96, "comissao": 6 }
     ],
     "CDC FGTS": [
-        { "taxa_min": 1.79, "taxa_max": 1.79, "prazo_min": 36, "prazo_max": 60, "comissao": 2.94 }
+        { "taxa_min": 1.79, "taxa_max": 1.79, "prazo_min": 36, "prazo_max": 60, "comissao": 4.2 }
     ]
 }
